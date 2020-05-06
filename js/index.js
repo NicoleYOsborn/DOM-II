@@ -116,3 +116,26 @@ secondButton.addEventListener('dragend', function (event) {
     mountainSec.removeChild(secondButton);
     destination.appendChild(secondButton);
 });
+
+// stop default behavior on About Us link
+
+const stay = (event)=>{
+    event.preventDefault();
+    about.textContent = 'STAY!';
+}
+about.addEventListener('click', stay);
+
+// change background color of nav and background color of Blog with stop propogation
+
+const almond = (event)=>{
+    navBar.style.backgroundColor = '#FFEBCD'
+}
+
+navBar.addEventListener('click', almond);
+
+const aqua = (event) =>{
+    blog.style.backgroundColor = '#7FFFD4';
+    event.stopPropagation();
+}
+
+blog.addEventListener('click', aqua);
